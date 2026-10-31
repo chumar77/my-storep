@@ -1,25 +1,72 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Online Store</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAIS Store | Order on WhatsApp</title>
+<meta name="description" content="Shop online and order directly on WhatsApp. Cash on delivery available.">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>My Online Store</h1>
-    <p>Welcome to our online shop</p>
-  </header>
 
-  <main>
-    <h2>Our Products</h2>
-    <div id="products"></div>
-    <h2>Shopping Cart</h2>
-    <div id="cart">Your cart is empty</div>
-  </main>
+<header>
+  <a href="#"><img src="logo.jpg" alt="SAIS logo"></a>
+  <nav><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  <button class="cart-btn" id="openCart">Cart (<span id="count">0</span>)</button>
+</header>
 
-  <script src="script.js"></script>
+<main>
+  <div class="hero">
+    <div>
+      <h1>Quality you can trust.</h1>
+      <p>Choose your products and send your order on WhatsApp. We confirm it and deliver to your door. Cash on delivery available.</p>
+      <a class="btn" href="#shop">Shop now</a><a class="btn alt" href="#contact">Contact us</a>
+    </div>
+    <div class="diamond-wrap"><div class="diamond"><img src="images/hero.jpg" alt="" onerror="this.remove()"></div></div>
+  </div>
+
+  <div class="strip"><span>Order on WhatsApp</span><span>Cash on delivery</span><span>Fast delivery</span></div>
+
+  <section id="shop">
+    <h2>Our products</h2>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="products"></div>
+  </section>
+
+  <section class="about" id="about">
+    <div>
+      <h2>About us</h2>
+      <p>Write a short story about your store here: who you are, what you sell and why customers should trust you. Two or three sentences is enough.</p>
+    </div>
+    <div class="contact-box" id="contact">
+      <h3>Questions? Message us</h3>
+      <p>WhatsApp: +92 301 1980666</p>
+      <a class="btn" id="contactWa" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer><span>© SAIS Store</span><span>+92 301 1980666</span><span>Lahore, Pakistan</span></footer>
+
+<a class="float-wa" id="floatWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="drawer-head"><h3>Your cart</h3><button id="closeCart" aria-label="Close cart">✕</button></div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot" id="cartFoot">
+    <div class="total"><span>Total</span><span id="total">Rs. 0</span></div>
+    <input id="cName" placeholder="Your name" autocomplete="name">
+    <input id="cPhone" placeholder="Your phone number" type="tel" autocomplete="tel">
+    <textarea id="cAddress" rows="2" placeholder="Delivery address (city, area, house no.)" autocomplete="street-address"></textarea>
+    <div class="note" id="note"></div>
+    <button class="checkout" id="checkout">Send order on WhatsApp</button>
+  </div>
+</aside>
+
+<script src="script.js"></script>
 </body>
 </html>
